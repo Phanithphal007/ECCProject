@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="km-KH">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234f46e5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M22 10v6M2 10l10-5 10 5-10 5z'/><path d='M6 12v5c3 3 9 3 12 0v-5'/></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduManage — ប្រព័ន្ធគ្រប់គ្រងការសិក្សាភាសាអង់គ្លេស (Grade 1 - 12)</title>
+    <!-- Preconnect for fast Google Fonts loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Noto Sans Khmer (weights 100-900) + Bokor + Inter (Primary English) + Siemreap + Moul -->
+    <link href="https://fonts.googleapis.com/css2?family=Bokor&family=Inter:wght@400;500;600;700;800&family=Moul&family=Noto+Sans+Khmer:wght@100..900&family=Siemreap&display=swap" rel="stylesheet">
+    <!-- Immediate Anti-White-Flash Theme Initialization Script -->
+    <script>
+      (function() {
+        try {
+          var stored = localStorage.getItem('edumanage-theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var isDark = stored === 'dark' || (!stored && prefersDark) || (stored === 'system' && prefersDark);
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.setAttribute('data-theme', 'dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.setAttribute('data-theme', 'light');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-slate-50 dark:bg-[#0B1120] text-slate-900 dark:text-[#F8FAFC] antialiased font-sans">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

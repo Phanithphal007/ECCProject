@@ -1,0 +1,312 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@import "./styles/themes.css";
+
+/* Local Font Face Definitions */
+@font-face {
+  font-family: 'Noto Sans Khmer';
+  src: url('/fonts/NotoSansKhmer-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Sans Khmer';
+  src: url('/fonts/NotoSansKhmer-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Sans Khmer';
+  src: url('/fonts/NotoSansKhmer-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Sans Khmer';
+  src: url('/fonts/NotoSansKhmer-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bokor';
+  src: url('/fonts/Bokor-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Siemreap';
+  src: url('/fonts/Siemreap.ttf') format('truetype'),
+       url('/fonts/Siemreap-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Moul';
+  src: url('/fonts/Moul-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-moul {
+  font-family: "Moul", serif !important;
+}
+
+@theme {
+  --font-sans: 'Inter', "Siemreap", system-ui, sans-serif;
+  --font-khmer: "Siemreap", system-ui, sans-serif;
+  --font-english: 'Inter', Arial, sans-serif;
+
+  /* Global Color Palette Design Tokens */
+  --color-primary: #4338CA;
+  --color-primary-hover: #4F46E5;
+  --color-primary-light: #EEF2FF;
+  --color-sidebar: #0F172A;
+  --color-main: #F8FAFC;
+  --color-card: #FFFFFF;
+  --color-main-text: #0F172A;
+  --color-secondary-text: #64748B;
+  --color-border: #E2E8F0;
+  --color-success: #059669;
+  --color-warning: #D97706;
+  --color-danger: #DC2626;
+}
+
+:root {
+  --font-sans: 'Inter', "Siemreap", system-ui, sans-serif;
+  --font-khmer: "Siemreap", system-ui, sans-serif;
+  --font-english: 'Inter', Arial, sans-serif;
+
+  --color-primary: #4338CA;
+  --color-primary-hover: #4F46E5;
+  --color-primary-light: #EEF2FF;
+  --color-sidebar: #0F172A;
+  --color-main: #F8FAFC;
+  --color-card: #FFFFFF;
+  --color-main-text: #0F172A;
+  --color-secondary-text: #64748B;
+  --color-border: #E2E8F0;
+  --color-success: #059669;
+  --color-warning: #D97706;
+  --color-danger: #DC2626;
+}
+
+/* Global Form & Input Focus States matching #4338CA */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #4338CA !important;
+  box-shadow: 0 0 0 2px rgba(67, 56, 202, 0.2) !important;
+  outline: none !important;
+}
+
+.dark input:focus,
+.dark select:focus,
+.dark textarea:focus {
+  border-color: #6366F1 !important;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.25) !important;
+  outline: none !important;
+}
+
+/* Base typography */
+html, body {
+  font-family: 'Inter', "Siemreap", system-ui, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8fafc;
+  color: #0f172a;
+  text-rendering: optimizeLegibility;
+}
+
+/* Global Khmer utility & font configuration requested by user */
+.font-khmer,
+.font-siemreap,
+.khmer-text {
+  font-family: "Siemreap", system-ui, sans-serif !important;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+}
+
+/* 100% Khmer Mode typography - applies across ALL elements when language is Khmer */
+html[data-lang="km"],
+html[data-lang="km"] *:not(.font-english):not(.english-text):not([data-english="true"]),
+html[lang^="km"],
+html[lang^="km"] *:not(.font-english):not(.english-text):not([data-english="true"]),
+body.lang-km,
+body.lang-km *:not(.font-english):not(.english-text):not([data-english="true"]),
+[data-lang="km"],
+[data-lang="km"] *:not(.font-english):not(.english-text):not([data-english="true"]) {
+  font-family: "Siemreap", system-ui, sans-serif !important;
+  line-height: 1.65;
+}
+
+/* English overrides when explicitly specified */
+.font-inter,
+.font-english,
+.english-text,
+[data-english="true"] {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, Arial, sans-serif !important;
+}
+
+/* Ensure inputs, selects, textareas, and buttons inherit the active language font */
+input, button, select, textarea, optgroup, option {
+  font-family: inherit !important;
+}
+
+/* Clean modern scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.45) transparent;
+}
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.5);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.7);
+}
+
+.ecc-report-document {
+  font-family: "Siemreap", system-ui, sans-serif;
+  color: #0f172a;
+  background-color: #ffffff;
+}
+
+/* SCREEN PREVIEW: Khmer uses "Siemreap", system-ui, sans-serif */
+.ecc-report-screen .font-report-khmer,
+.ecc-report-screen .khmer-text,
+.ecc-report-screen [data-khmer="true"],
+.font-report-khmer {
+  font-family: "Siemreap", system-ui, sans-serif !important;
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+}
+
+.ecc-report-screen .font-report-english,
+.ecc-report-screen .english-text,
+.ecc-report-screen [data-english="true"] {
+  font-family: 'Inter', Arial, sans-serif !important;
+  line-height: 1.5;
+}
+
+/* PRINT & PDF EXPORT: Matches Official Khmer Siemreap Font */
+.ecc-pdf-export .font-report-khmer,
+.ecc-pdf-export .khmer-text,
+.ecc-pdf-export [data-khmer="true"],
+.ecc-pdf-export .font-bokor,
+.font-bokor-print,
+.ecc-official-pdf-document {
+  font-family: "Siemreap", system-ui, sans-serif !important;
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+  text-rendering: optimizeLegibility;
+}
+
+.ecc-pdf-export .font-report-english,
+.ecc-pdf-export .english-text,
+.ecc-pdf-export [data-english="true"] {
+  font-family: 'Inter', Arial, sans-serif !important;
+  line-height: 1.5;
+}
+
+/* Mobile-First Responsive Base Improvements */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+#root {
+  overflow-x: hidden;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* Touch-friendly target sizing & tap highlight elimination */
+button, a, input, select, textarea {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Safe area support for modern phones (iPhone notch/island & home bar) */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 1rem);
+}
+
+.safe-area-top {
+  padding-top: env(safe-area-inset-top, 0rem);
+}
+
+/* Mobile responsive table container with horizontal scroll hints */
+.responsive-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Print styling for A4 portrait ECC Report */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 6mm 8mm;
+  }
+  body {
+    background: #ffffff !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .ecc-report-page,
+  .ecc-report-document {
+    page-break-after: always;
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 10mm 15mm 12mm 15mm !important;
+    width: 210mm !important;
+    max-width: 210mm !important;
+  }
+  /* In print, Khmer renders matching the website preview */
+  .ecc-report-document .font-report-khmer,
+  .ecc-report-document .khmer-text,
+  .ecc-report-document [data-khmer="true"],
+  .ecc-report-document .font-bokor {
+    font-family: 'Siemreap', system-ui, sans-serif !important;
+    line-height: 1.65 !important;
+    text-rendering: optimizeLegibility;
+  }
+  .ecc-report-document .font-report-english,
+  .ecc-report-document .english-text,
+  .ecc-report-document [data-english="true"] {
+    font-family: 'Inter', Arial, sans-serif !important;
+  }
+}

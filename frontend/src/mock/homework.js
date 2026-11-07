@@ -1,0 +1,57 @@
+export const mockHomework = [
+  {
+    id: "HW-01",
+    studentId: "STU-1020",
+    classId: "CLS-G1-ALP",
+    title: "Reading Comprehension: The Mekong River Dolphins",
+    course: "Basic English for Daily Life",
+    grade: "Grade 5",
+    assignedDate: "2026-11-01",
+    dueDate: "2026-11-06 (Tomorrow)",
+    assignedBy: "Teacher Sophea Heng",
+    description: "Read pages 14-18 in your workbook. Answer questions 1 to 5 in full English sentences and practice reading the passage aloud.",
+    status: "Pending",
+    submissionDate: null,
+    score: null,
+    teacherFeedback: null,
+    submittedCount: 21,
+    totalCount: 24
+  },
+  {
+    id: "HW-02",
+    studentId: "STU-1020",
+    classId: "CLS-G1-ALP",
+    title: "English Dialogue: At the Olympic Stadium",
+    course: "Conversational Speaking & Pronunciation",
+    grade: "Grade 5",
+    assignedDate: "2026-10-28",
+    dueDate: "2026-11-03",
+    assignedBy: "Teacher Michael Davies",
+    description: "Write a 6-line dialogue between two friends planning a badminton match. Submit written script and short audio voice note.",
+    status: "Submitted",
+    submissionDate: "2026-11-02",
+    score: "9.5 / 10",
+    teacherFeedback: "Excellent vocabulary! Great use of future tense 'We will meet at 4 PM'. Keep up the fluent pronunciation.",
+    submittedCount: 23,
+    totalCount: 24
+  },
+  {
+    id: "HW-03",
+    studentId: "STU-1020",
+    classId: "CLS-G1-ALP",
+    title: "Phonics & Spelling Quiz Revision: Short & Long Vowels",
+    course: "Phonics & Word Building Mastery",
+    grade: "Grade 5",
+    assignedDate: "2026-10-20",
+    dueDate: "2026-10-25",
+    assignedBy: "Teacher Sovannary Long",
+    description: "Complete Unit 3 word search and write 10 sample sentences with words ending in silent 'e'.",
+    status: "Graded",
+    submissionDate: "2026-10-24",
+    score: "10 / 10",
+    teacherFeedback: "Flawless handwriting and 100% correct spelling. Wonderful dedication, Dara!",
+    submittedCount: 24,
+    totalCount: 24
+  }
+];
+
